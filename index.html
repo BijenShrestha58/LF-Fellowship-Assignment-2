@@ -10,18 +10,22 @@
   <body>
     <!-- header -->
     <header class="header header--sm">
-      <div class="header__burger"><img src="icon/hamburger.png" /></div>
+      <div class="header__burger">
+        <img src="icon/hamburger.png" class="invert-color" />
+      </div>
       <div class="header__items">
         <div class="header__item">
           <img src="img/logo.png" class="header__img" />
         </div>
         <div class="header__item">
-          <div class="header__toggle">
-            <img src="icon/moon.png" />
+          <div class="header__toggle header__toggle--dark" id="display-mode-sm">
+            <img id="icon-theme-sm" src="icon/moon.png" />
             <div class="toggle__select"></div>
           </div>
         </div>
-        <div class="header__item"><img src="icon/light-cart.png" /></div>
+        <div class="header__item">
+          <img src="icon/light-cart.png" class="invert-color" />
+        </div>
       </div>
     </header>
     <header class="header header--lg">
@@ -33,12 +37,25 @@
       </div>
       <div class="header__items">
         <div class="header__item">
-          <div class="header__toggle">
-            <img src="icon/moon.png" />
+          <div class="header__toggle header__toggle--dark" id="display-mode">
+            <img id="icon-theme" src="icon/moon.png" />
+            <!-- <img
+              id="icon-sun"
+              src="icon/sun.png"
+            /> -->
             <div class="toggle__select"></div>
           </div>
+          <!-- <div class="header__toggle header__toggle--light">
+            <div class="toggle__select"></div>
+            <img src="icon/sun.png" />
+          </div> -->
         </div>
-        <div class="header__item"><img src="icon/light-cart.png" /></div>
+        <div class="header__item">
+          <img src="icon/light-search.png" class="invert-color" />
+        </div>
+        <div class="header__item">
+          <img src="icon/light-cart.png" class="invert-color" />
+        </div>
         <div class="header__item">
           <button class="button button--outlined button--sm">Login</button>
         </div>
@@ -69,7 +86,9 @@
       </div>
       <!-- contains buttons and slider of hero section -->
       <div class="section__image-container section__image-container--hero">
-        <div class="section__button-container button-container">
+        <div
+          class="section__button-container button-container button-container--hero"
+        >
           <button class="button button--md button--filled">Shop now</button>
           <button class="button button--md button--outlined button--with-icon">
             <img src="icon/cart-orange.png" />Add to cart
@@ -117,7 +136,9 @@
             </div>
           </div>
           <div class="section__scroll-container">
-            <div class="section__scroll"><img src="icon/arrow-down.png" /></div>
+            <div class="section__scroll">
+              <img src="icon/arrow-down.png" class="invert-color" />
+            </div>
           </div>
         </div>
       </div>
@@ -460,4 +481,43 @@
       <div class="footer__end">© 2022.Musify.All Rights Reserved</div>
     </footer>
   </body>
+  <script>
+    const icons = {
+      dark: "icon/moon.png",
+      light: "icon/sun.png",
+    };
+
+    let toggle = document.getElementById("display-mode");
+    let togglesm = document.getElementById("display-mode-sm");
+
+    toggle.addEventListener("click", toggleLightMode);
+    togglesm.addEventListener("click", toggleLightModeSm);
+
+    function toggleLightMode() {
+      let mode = document.getElementById("icon-theme");
+      const url = new URL(mode.src);
+      console.log(url);
+      if (url.pathname.substring(1) === icons.dark) {
+        mode.src = icons.light;
+        console.log("darkmode");
+      } else if (url.pathname.substring(1) === icons.light) {
+        mode.src = icons.dark;
+        console.log("lightmode");
+      }
+      document.body.classList.toggle("body--light");
+    }
+    function toggleLightModeSm() {
+      let mode = document.getElementById("icon-theme-sm");
+      const url = new URL(mode.src);
+      console.log(url);
+      if (url.pathname.substring(1) === icons.dark) {
+        mode.src = icons.light;
+        console.log("darkmode");
+      } else if (url.pathname.substring(1) === icons.light) {
+        mode.src = icons.dark;
+        console.log("lightmode");
+      }
+      document.body.classList.toggle("body--light");
+    }
+  </script>
 </html>

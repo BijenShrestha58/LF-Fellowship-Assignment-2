@@ -12,6 +12,7 @@ body {
 
 .header {
   position: fixed;
+  z-index: 100;
   top: 0px;
   height: 60px;
   align-items: center;
@@ -47,6 +48,12 @@ body {
   display: flex;
   padding: 0 4px;
   align-items: center;
+}
+.header__toggle--light {
+  display: none;
+  background-color: white;
+}
+.header__toggle-dark {
   background-color: black;
 }
 .header .toggle__select {
@@ -574,8 +581,11 @@ body {
     -webkit-line-clamp: 5;
   }
   .button-container {
-    justify-content: flex-start;
+    justify-content: center;
     gap: 8px;
+  }
+  .button-container--hero {
+    justify-content: flex-start;
   }
   .image--hero {
     display: block;
@@ -589,4 +599,37 @@ body {
   .section--hero {
     margin-bottom: 100px;
   }
+}
+body.body--light {
+  background: #fafafa;
+}
+body.body--light .header {
+  color: black;
+}
+body.body--light .text-container__title--lg {
+  color: black;
+}
+body.body--light .gradient-block {
+  display: none;
+}
+body.body--light .invert-color {
+  filter: invert(100%);
+}
+body.body--light .slider__card--hero {
+  color: black;
+}
+body.body--light .section__title {
+  color: black;
+}
+body.body--light .section__title--secondary {
+  color: black;
+}
+body.body--light .box__text {
+  color: black;
+}
+body.body--light .slider__card--long {
+  background-color: #282828;
+}
+body.body--light .slider__card--blue {
+  background-color: #370665;
 }/*# sourceMappingURL=styles.css.map */
