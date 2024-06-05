@@ -4,6 +4,7 @@ $secondary-color: #f14a16;
 * {
   margin: 0;
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 body {
   background: #070606;
@@ -12,6 +13,7 @@ body {
   overflow-x: hidden;
   transition: 1s;
 }
+
 .header {
   position: fixed;
   z-index: 100;
@@ -39,8 +41,6 @@ body {
     justify-content: space-between;
     position: relative;
     right: 30px;
-  }
-  &__item {
   }
   &__img {
     height: 60px;
@@ -219,7 +219,7 @@ body {
   }
   &__description {
     color: #a4a4a4;
-    font-size: 18px;
+    // font-size: 18px;
     font-weight: 200;
     margin-bottom: 43px;
     display: -webkit-box;
@@ -530,9 +530,14 @@ body {
   .section {
     padding: 0 128px;
   }
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
   .section--hero {
     padding: 0;
     padding-left: 128px;
+    scroll-margin-top: 100px;
   }
   .section__slider-container {
     flex-direction: row-reverse;
