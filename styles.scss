@@ -20,6 +20,8 @@ body {
   align-items: center;
   justify-content: space-between;
   width: 100vw;
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(5px);
   &--lg {
     display: none;
   }
@@ -127,6 +129,7 @@ body {
     padding-right: 37px;
   }
   &__slider-container {
+    padding-top: 105px;
     display: flex;
     flex-direction: column;
   }
@@ -140,9 +143,13 @@ body {
     }
   }
   &__slider--hero {
-    margin-top: 105px;
-    height: 130px;
-    width: calc(250px * 3 + 20px * 2);
+    height: 275px;
+    width: 100vw;
+    overflow-x: scroll;
+    align-items: center;
+    &::-webkit-scrollbar {
+      display: none;
+    }
   }
   &__scroll-container {
     margin-top: 52px;
@@ -401,6 +408,8 @@ body {
   &__card--hero {
     margin-right: 20px;
     padding-left: 10px;
+    height: 130px;
+    flex-shrink: 0;
   }
   &__card--long {
     margin-right: 30px;
@@ -517,15 +526,19 @@ body {
   .section {
     padding: 0 128px;
   }
+  .section--hero {
+    padding-left: 128px;
+  }
   .section__slider-container {
     flex-direction: row-reverse;
     align-items: center;
     justify-content: space-around;
+    width: 120vw;
   }
   .section__scroll {
     display: flex;
     align-items: center;
-    margin-bottom: 0;
+    // margin-bottom: 0;
     transform: translateY(35px);
   }
   .slider__card--long {
@@ -608,6 +621,11 @@ body {
       align-items: center;
       justify-content: space-around;
     }
+    .nav__item:hover {
+      border-bottom: 1px #fc9918 solid;
+      transform: translateY(1px);
+      cursor: pointer;
+    }
     .header__items {
       flex: 3;
       position: static;
@@ -657,12 +675,24 @@ body {
   .footer__image-container--sm {
     display: none;
   }
+  .section--wrap {
+    flex-wrap: wrap;
+    height: 480px;
+    flex-direction: column;
+  }
+  .section__image-container--overlap {
+    order: -1;
+  }
+  .section__title--secondary {
+    margin-top: 0;
+  }
 }
 
 body.body--light {
   background: #fafafa;
   .header {
     color: black;
+    background-color: rgba(255, 255, 255, 1);
   }
   .text-container__title--lg {
     color: black;

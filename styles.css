@@ -19,6 +19,9 @@ body {
   align-items: center;
   justify-content: space-between;
   width: 100vw;
+  background-color: rgba(255, 255, 255, 0.1);
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
 }
 .header--lg {
   display: none;
@@ -125,6 +128,7 @@ body {
   padding-right: 37px;
 }
 .section__slider-container {
+  padding-top: 105px;
   display: flex;
   flex-direction: column;
 }
@@ -138,9 +142,13 @@ body {
   display: none;
 }
 .section__slider--hero {
-  margin-top: 105px;
-  height: 130px;
-  width: 790px;
+  height: 275px;
+  width: 100vw;
+  overflow-x: scroll;
+  align-items: center;
+}
+.section__slider--hero::-webkit-scrollbar {
+  display: none;
 }
 .section__scroll-container {
   margin-top: 52px;
@@ -399,6 +407,8 @@ body {
 .slider__card--hero {
   margin-right: 20px;
   padding-left: 10px;
+  height: 130px;
+  flex-shrink: 0;
 }
 .slider__card--long {
   margin-right: 30px;
@@ -520,15 +530,18 @@ body {
   .section {
     padding: 0 128px;
   }
+  .section--hero {
+    padding-left: 128px;
+  }
   .section__slider-container {
     flex-direction: row-reverse;
     align-items: center;
     justify-content: space-around;
+    width: 120vw;
   }
   .section__scroll {
     display: flex;
     align-items: center;
-    margin-bottom: 0;
     transform: translateY(35px);
   }
   .slider__card--long {
@@ -610,6 +623,11 @@ body {
     align-items: center;
     justify-content: space-around;
   }
+  .header--lg .nav__item:hover {
+    border-bottom: 1px #fc9918 solid;
+    transform: translateY(1px);
+    cursor: pointer;
+  }
   .header--lg .header__items {
     flex: 3;
     position: static;
@@ -658,12 +676,24 @@ body {
   .footer__image-container--sm {
     display: none;
   }
+  .section--wrap {
+    flex-wrap: wrap;
+    height: 480px;
+    flex-direction: column;
+  }
+  .section__image-container--overlap {
+    order: -1;
+  }
+  .section__title--secondary {
+    margin-top: 0;
+  }
 }
 body.body--light {
   background: #fafafa;
 }
 body.body--light .header {
   color: black;
+  background-color: rgb(255, 255, 255);
 }
 body.body--light .text-container__title--lg {
   color: black;
