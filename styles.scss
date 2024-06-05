@@ -735,9 +735,11 @@ body.body--light {
   }
   .slider__card--long {
     background-color: #282828;
+    box-shadow: 5px 10px 18px 0px rgba(0, 0, 0, 0.25);
   }
   .slider__card--blue {
     background-color: #370665;
+    box-shadow: none;
   }
   .header__toggle {
     background-color: white;
