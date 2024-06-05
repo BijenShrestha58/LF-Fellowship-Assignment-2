@@ -133,7 +133,7 @@ body {
   flex-direction: column;
 }
 .section__slider--long {
-  width: 85vw;
+  width: 100vw;
   align-self: flex-start;
   padding-left: 40px;
   overflow: scroll;
@@ -548,6 +548,9 @@ body {
   }
   .section__scroll-container {
     margin-right: 10vw;
+  }
+  .section__slider--long {
+    width: 85vw;
   }
   .slider__card--long {
     margin-right: 200px;
