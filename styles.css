@@ -175,6 +175,7 @@ body {
   font-weight: bold;
   margin-top: 68px;
   margin-bottom: 40px;
+  scroll-margin-top: 100px;
 }
 .section__title--secondary {
   font-size: 36px;
@@ -480,6 +481,7 @@ body {
 .footer__title {
   font-weight: 700;
   margin-bottom: 12px;
+  scroll-margin-top: 100px;
 }
 .footer__text {
   list-style-type: none;

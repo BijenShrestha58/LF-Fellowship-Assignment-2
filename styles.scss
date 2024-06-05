@@ -175,6 +175,7 @@ body {
     font-weight: bold;
     margin-top: 68px;
     margin-bottom: 40px;
+    scroll-margin-top: 100px;
   }
   &__title--secondary {
     font-size: 36px;
@@ -479,6 +480,7 @@ body {
   &__title {
     font-weight: 700;
     margin-bottom: 12px;
+    scroll-margin-top: 100px;
   }
   &__text {
     list-style-type: none;
