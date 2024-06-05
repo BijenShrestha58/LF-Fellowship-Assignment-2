@@ -229,7 +229,8 @@ body {
 
 .button-container {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
+  gap: 12px;
 }
 
 .button-container--single {
@@ -472,6 +473,7 @@ body {
   display: flex;
   flex-direction: column;
   margin-bottom: 36px;
+  margin-right: 20px;
 }
 .footer__title {
   font-weight: 700;
@@ -526,7 +528,7 @@ body {
   display: none;
 }
 
-@media screen and (min-width: 416px) {
+@media screen and (min-width: 768px) {
   .section {
     padding: 0 128px;
   }
@@ -553,6 +555,7 @@ body {
   }
   .card__text-wrapper {
     flex-direction: row;
+    flex-wrap: wrap;
   }
   .section__image-container--margin-lg {
     flex-direction: row;
@@ -662,7 +665,6 @@ body {
     display: block;
     position: absolute;
     height: 100vh;
-    width: 50vw;
     z-index: -1;
     right: 0;
     top: 0;
